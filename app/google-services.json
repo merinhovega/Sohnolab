@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "318596831816",
+    "project_id": "sohnolab",
+    "storage_bucket": "sohnolab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318596831816:android:a0c8c4957630db9162567d",
+        "android_client_info": {
+          "package_name": "com.example.sohnolab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318596831816-7qtmlh5q063ff2a3upe47u4shnk1rdcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxKrPqxKnBNjEjgtQVYq1nUloYCMs3z9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318596831816-7qtmlh5q063ff2a3upe47u4shnk1rdcn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

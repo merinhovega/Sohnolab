@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Sohnolab</string>
+    <string name="solicitadoPor">Requested By</string>
+    <string name="casoMaximo">MAXIMO Case</string>
+    <string name="fecha">Date (dd/mm/yyyy)</string>
+    <string name="tiempoEjecutado">Time Execute (min)</string>
+    <string name="guardar">Save</string>
+    <string name="limpiar">Clear</string>
+    <string name="crearSoportes">SUPPORTS NEW</string>
+    <string name="eliminar">Delete</string>
+    <string name="detalleSoporte">SUPPORT DETAILS</string>
+    <string name="atendidoPor">"Attended By "</string>
+    <string name="tipoServicio">Service Type</string>
+    <string name="plataforma">Software</string>
+    <string name="medio">Media</string>
+    <string name="otros">Other</string>
+    <string name="incidente">Incident</string>
+    <string name="problema">Problem</string>
+    <string name="requerimiento">Request</string>
+    <string name="correo">E-mail</string>
+    <string name="telefono">Phone</string>
+    <string name="mensaje_guardado_exitoso">Support saved successfully</string>
+    <string name="mensaje_seleccion_foto">Support evidence is required</string>
+    <string name="error_ingreso_solicitadoPor">Requested By field is required</string>
+    <string name="error_ingreso_fecha">Date field is required</string>
+    <string name="error_ingreso_tiempoEjecutado">Time Executed field is required</string>
+    <string name="error_ingreso_tipoServicio">Select a service type</string>
+    <string name="mensaje_eliminar">Support delete</string>
+    <string name="pregunta_eliminar_soporte">Do you want to remove the support?</string>
+    <string name="mensaje_si">Yes</string>
+    <string name="error_ingreso_casoMaximo">MAXIMO Case field is required</string>
+    <string name="error_ingreso_plataforma">Select an application</string>
+    <string name="error_ingreso_atendidoPor">"Select attended by "</string>
+    <string name="error_ingreso_medio">Select a media</string>
+    <string name="listadoSoportes">SUPPORTS</string>
+    <string name="descripcion">Description of the support</string>
+    <string name="error_ingreso_descripcion">Enter the description of the support</string>
+</resources>

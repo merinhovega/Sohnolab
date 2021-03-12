@@ -1,20 +1,32 @@
 package com.example.sohnolab;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements AdaptadorSoporte.OnSoporteClickListener {
+    private RecyclerView lista;
+    private AdaptadorSoporte adapter;
+    private LinearLayoutManager llm;
+    private ArrayList<Soporte> soportes;
+    private DatabaseReference databaseReference;
+    private String bd = "Soportes";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,34 +35,62 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        lista = findViewById(R.id.lstSoportes);
+
+        soportes = new ArrayList<>();
+        llm = new LinearLayoutManager(this);
+        adapter = new AdaptadorSoporte(soportes,this::onSoporteClick);
+        llm.setOrientation(RecyclerView.VERTICAL);
+
+        lista.setLayoutManager(llm);
+        lista.setAdapter(adapter);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child(bd).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                soportes.clear();
+                if(snapshot.exists()){
+                    for(DataSnapshot snap: snapshot.getChildren()){
+                        Soporte s = snap.getValue(Soporte.class);
+                        soportes.add(s);
+                    }
+                }
+               adapter.notifyDataSetChanged();
+               Datos.setSoportes(soportes);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public void crear(View v){
+        Intent intent;
+        intent = new Intent(MainActivity.this, CrearSoportes.class);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onSoporteClick(Soporte s) {
+        Intent intent;
+        Bundle bundle;
+        bundle = new Bundle();
+        bundle.putString("id", s.getId());
+        bundle.putString("solicitadoPor", s.getSolicitadoPor());
+        bundle.putString("fecha", s.getFecha());
+        bundle.putString("tiempoEjecutado", s.getTiempoEjecutado());
+        bundle.putString("atendidoPor", s.getAtendidoPor());
+        bundle.putString("casoMaximo", s.getCasoMaximo());
+        bundle.putString("tipoServicio", s.getTipoServicio());
+        bundle.putString("medio", s.getMedio());
+        bundle.putString("plataforma", s.getPlataforma());
+        bundle.putString("descripcion", s.getDescripcion());
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        intent = new Intent(MainActivity.this, DetalleSoporte.class);
+        intent.putExtra("datos", bundle);
+        startActivity(intent);
     }
+
 }

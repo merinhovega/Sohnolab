@@ -1,12 +1,87 @@
 <resources>
     <string name="app_name">Sohnolab</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="solicitadoPor">Solicitado Por</string>
+    <string name="casoMaximo">Caso MAXIMO</string>
+    <string name="fecha">Fecha (dd/mm/aaaa)</string>
+    <string name="tiempoEjecutado">Tiempo Ejecutado (min)</string>
+    <string name="guardar">Guardar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="crearSoportes">GENERAR SOPORTES</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="detalleSoporte">DETALLE SOPORTE</string>
+    <string name="atendidoPor">Atendido Por</string>
+    <string name="tipoServicio">Tipo Servicio</string>
+    <string name="plataforma">Aplicación</string>
+    <string name="medio">Medio de comunicación</string>
+
+    <string name="incidente">Incidente</string>
+    <string name="problema">Problema</string>
+    <string name="requerimiento">Requerimiento</string>
+    <string-array name="tipoServicio">
+        <item>@string/tipoServicio</item>
+        <item>@string/incidente</item>
+        <item>@string/problema</item>
+        <item>@string/requerimiento</item>
+    </string-array>
+
+    <string name="tos" translatable="false">TOS</string>
+    <string name="maximo" translatable="false">MAXIMO</string>
+    <string name="zeus" translatable="false">ZEUS</string>
+    <string name="otros">Otros</string>
+    <string-array name="plataforma">
+        <item>@string/plataforma</item>
+        <item>@string/tos</item>
+        <item>@string/maximo</item>
+        <item>@string/zeus</item>
+        <item>@string/otros</item>
+    </string-array>
+
+    <string name="gisela" translatable="false">Gisela</string>
+    <string name="lizeth" translatable="false">Lizeth </string>
+    <string name="margarita" translatable="false">Margarita</string>
+    <string-array name="atendidoPor">
+        <item>@string/atendidoPor</item>
+        <item>@string/gisela</item>
+        <item>@string/lizeth</item>
+        <item>@string/margarita</item>
+    </string-array>
+
+    <string name="correo">Correo eletrónico</string>
+    <string name="telefono">Teléfono</string>
+    <string name="Teams" translatable="false">Teams</string>
+    <string name="mensaje_guardado_exitoso">Soporte guardado con éxito</string>
+    <string name="mensaje_seleccion_foto">Evidencia del soporte es obligatoria</string>
+    <string name="error_ingreso_solicitadoPor">Campo Solicitado Por es obligatorio</string>
+    <string name="error_ingreso_fecha">Campo Fecha es obligatorio</string>
+    <string name="error_ingreso_tiempoEjecutado">Campo Tiempo Ejecutado es obligatorio</string>
+    <string name="error_ingreso_tipoServicio">Seleccione un tipo de servicio</string>
+    <string name="mensaje_eliminar">Eliminar Soporte</string>
+    <string name="pregunta_eliminar_soporte">¿Desea eliminar el soporte?</string>
+    <string name="mensaje_si">Si</string>
+    <string name="mensaje_no" translatable="false">No</string>
+    <string name="error_ingreso_casoMaximo">Campo Caso Maximo es obligatorio</string>
+    <string name="error_ingreso_plataforma">Seleccione una plataforma</string>
+    <string name="error_ingreso_atendidoPor">Seleccione atendido por</string>
+    <string name="error_ingreso_medio">Seleccione un medio</string>
+    <string name="listadoSoportes">SOPORTES</string>
+    <string name="descripcion">Descripción del soporte</string>
+    <string name="error_ingreso_descripcion">Ingrese la descripción del soporte</string>
+    <string-array name="medio">
+        <item>@string/medio</item>
+        <item>@string/correo</item>
+        <item>@string/casoMaximo</item>
+        <item>@string/Teams</item>
+        <item>@string/telefono</item>
+        <item>@string/otros</item>
+    </string-array>
+
 </resources>

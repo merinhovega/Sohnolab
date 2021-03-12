@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sohnolab">
+        <activity android:name=".DetalleSoporte"></activity>
+        <activity android:name=".CrearSoportes" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
